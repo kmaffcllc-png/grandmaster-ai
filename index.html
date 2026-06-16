@@ -707,7 +707,7 @@ async function herbSend() {
             const res = await fetch('/.netlify/functions/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:1000, system:SYSTEM, messages:history})
+      body: JSON.stringify({model:'claude-sonnet-4-6', max_tokens:1000, system:SYSTEM, messages:history})
     });
     const data = await res.json();
     const reply = data.content?.find(b=>b.type==='text')?.text || 'Something went wrong.';
